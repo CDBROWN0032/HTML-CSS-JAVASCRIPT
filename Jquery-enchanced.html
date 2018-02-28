@@ -7,16 +7,23 @@
 		// jquery code must be inside this block
 	$().ready(function() {
 
-		$("#inp, #inp2").val("Hello, World!");
-		$("button").click(function(){
-			$("#inp").val("The first input box");
-			$("#inp2").val("The second input box");
+		//$("#inp, #inp2").val("Hello, World!");
+		//$("button").click(function(){
+			//$("#inp").val("The first input box");
+			//$("#inp2").val("The second input box");
 			//alert("We clicked the button");
+		//});
+
+		//$("label").css("font-family", "Arial");
+
+		//$("#toggle").click(function() {$("#inp, #inp2").toggle();});
+
+		$("#add").click()(function(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+			$("#inp").val(username);
+			$("#inp2").val(password);
 		});
-
-		$("label").css("font-family", "Arial");
-
-		$("#toggle").click(function() {$("#inp, #inp2").toggle();});
 	});
 	</script>
 </head>
@@ -27,5 +34,10 @@
 	<button>Click Me!</button>
 	<label>This is a label</label>
 	<button id="toggle">Toggle Input Boxes</button>
+	<form>
+		<p><label>User Name</label><input id="username" type="text"></p>
+		<p><label>Password</label><input id="password" type="password"></p>
+		<button id="add">Add</button>
+	</form>
 </body>
 </html>
