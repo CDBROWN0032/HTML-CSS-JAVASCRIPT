@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script lang="javascript">
+	    function Main() { // this function is started automatically
+        }		
+    arr = [];
+        $().ready(function(){
+            $("#add").click(function(){
+                var input = $("#inp").val();
+                arr.push(input);
+                $("#lbl").text(arr.join(" "));
+                $("#inp").val("");
+            });
+            $("#rev").click(function(){
+                arr = arr.reverse();
+                $("#lbl").text(arr.join(" "));
+                arr = [];
+            });
+        });
+     
+	</script>
+</head>
+<body OnLoad="Main()">
+    <input id="inp" type="text">
+    <button id="add">Add</button>
+    <button id="rev">Reverse</button>
+    <label id="lbl"></label>
+</body>
+</html>
+
+<!--
+ input controller
+ add button
+ variables
+ array variable
+ function to push into array
+ label variable
+ display into variable w/ join(" ")
+
++reverse button
++load array
++reverse array
+
+-->

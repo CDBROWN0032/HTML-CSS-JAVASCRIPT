@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script lang="javascript">
+	    function Main() { // this function is started automatically
+        }		
+        arr = [];
+        $().ready(function(){
+
+            $("#insert").click(function(){
+                var input = $("#inp").val();
+                arr.push(input);
+                $("#lbl").text(arr.join(" "));   
+                //$("#inp").val("");
+            });
+
+            $("#multiply").click(function(){
+                var total = 1;
+                for(var item of arr)
+                total *= item;
+                $("#lbl").text(total);
+                arr = [];
+            });
+        });
+     
+	</script>
+</head>
+<body OnLoad="Main()">
+    <input id="inp" type="text">
+    <button id="insert">Insert</button>
+    <button id="multiply">Multiply All</button>
+    <label id="lbl"></label>
+</body>
+</html>
+
+<!--
+ make an input
+ add button
+ Multiply All button
+ label for output
+ create input element
+ create array variable
++ button function to place input variable into array variable
++ fill label variable w/ array output seperated by a space (loop)
++ 2nd button multiplies entire array (loop)
+-->
