@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script lang="javascript">
+		
+		$().ready(function(){
+
+			$("button").click(function(){
+				var input = $("#inp").val();
+				var output = input.toUpperCase();
+				$("#lbl").text(output);
+			});
+		});
+
+	</script>
+</head>
+<body OnLoad="Main()">
+	<input id="inp" type="text">
+	<button>UPPER</button>
+	<label id="lbl"></label>
+</body>
+</html>
+
+

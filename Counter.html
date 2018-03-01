@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+	<script lang="javascript">
+		var number = 0;
+		var inputCtrl;
+		function Main() { // this function is started automaticall
+			inputCtrl = document.getElementById("inp");
+			display();
+		}
+		
+
+
+		function Decrease(){
+			number--;
+			display();
+		}
+		function Increase(){
+			number++;
+			display();					
+		}
+		function display(){
+			inputCtrl.value = number;
+			if (number % 2 == 0){
+				
+			}
+		}
+	</script>
+</head>
+<body OnLoad="Main()">
+	<button id="down" OnClick="Decrease()">DOWN</button>
+	<input id="inp" type="text">
+	<button id="up" OnClick="Increase()">UP</button>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p>// divisible by 2 = red
+// divisible by 3 = italic
+// divisible by 7 = bold</p>
+
+</body>
+</html>
+
+
