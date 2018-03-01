@@ -14,6 +14,13 @@
 			var labelCtrl = document.getElementById('lbl');
 			labelCtrl.textContent = output;
 		}
+		function Lower(){
+			var inputctrl2 = document.getElementById('inp2');
+			var input2 = inputctrl2.value;
+			var output2 = input2.toLowerCase();
+			var labelCtrl2 = document.getElementById('lbl2');
+			labelCtrl2.textContent = output2
+		}
 
 
 
@@ -23,6 +30,10 @@
 	<input id="inp" type="text">
 	<button id="btn" OnClick="Upper()">UPPER</button>
 	<label id="lbl">test</label>
+	<p></p>
+	<input id="inp2" type="text">
+	<button id="btn2" OnClick="Lower()">LOWER</button>
+	<label id="lbl2">test</label>
 </body>
 </html>
 

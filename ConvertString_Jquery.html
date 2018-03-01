@@ -2,27 +2,36 @@
 <html lang = "en">
 <head>
 	<title></title>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script lang="javascript">
 		
 		$().ready(function(){
 
-			$("button").click(function(){
+			$("#btn").click(function(){
 				var input = $("#inp").val();
 				var output = input.toUpperCase();
 				$("#lbl").text(output);
+
 			});
+
+			$("#btn2").click(function(){
+				var input = $("#inp2").val();
+				var output = input.toLowerCase();
+				$("#lbl2").text(output);
+			});
+
 		});
 
 	</script>
 </head>
 <body OnLoad="Main()">
 	<input id="inp" type="text">
-	<button>UPPER</button>
+	<button id="btn">UPPER</button>
 	<label id="lbl"></label>
+		<p></p>
+	<input id="inp2" type="text">
+	<button id="btn2">LOWER</button>
+	<label id="lbl2">test</label>
 </body>
 </html>
 

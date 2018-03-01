@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script lang="javascript">
+		function Main() { 			
+		}
+		
+
+	$().ready(function(){
+
+		$("#btn").click(function(){
+			var first = $("#first").val();
+			var last = $("#last").val();
+			$("#lbl").text(first+" "+last);
+		});
+	});
+
+		
+	</script>
+</head>
+<body OnLoad="Main()">
+	<input id="first" type="text">
+	<input id="last" type="text">
+	<button id="btn">Click Me</button>
+	<label id="lbl"></label>
+</body>
+</html>

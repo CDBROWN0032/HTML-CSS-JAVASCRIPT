@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+	<script lang="javascript">
+		function Main() { // this function is started automatically
+		}
+
+
+		
+		function Clicked(){
+		// strings from input 1 and 2
+		var inputCtrl1 = document.getElementById("first");
+		var firstname = inputCtrl1.value;
+		var inputCtrl2 = document.getElementById("last");
+		var lastname = inputCtrl2.value;
+		var output = firstname+" "+lastname;
+		var lbl = document.getElementById("lbl")
+		lbl.textContent = output;
+		}
+		
+	</script>
+</head>
+<body OnLoad="Main()">
+	<input id="first" type="text">
+	<input id="last" type="text">
+	<button id="btn" OnClick="Clicked()">Click Me</button>
+	<label id="lbl"></label>
+</body>
+</html>

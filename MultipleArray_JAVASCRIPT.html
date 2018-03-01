@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+	<script lang="javascript">
+		
+        function Main() { // this function is started automatically
+        }		
+
+        var arr = [];
+        var answer = 1;        
+        
+
+        function Insert(){
+        var label = document.getElementById("lbl");
+        var inputCtrl = document.getElementById("inp")
+        var input = parseInt(inputCtrl.value); 
+        arr.push(input);
+        var string = arr.join(" ");
+        label.textContent = string;
+        inputCtrl.value = "";
+        return arr;
+        }
+
+        function Multiply(){
+        var label = document.getElementById("lbl");
+        for (var nbr of arr) {
+            answer *= nbr;
+            }
+        label.textContent = answer;
+        arr = [];
+        }
+
+	</script>
+</head>
+<body OnLoad="Main()">
+    <input id="inp" type="text">
+    <button id="insert" OnClick=Insert()>Insert</button>
+    <button id="multiply" OnClick=Multiply()>Multiply All</button>
+    <label id="lbl">test field</label>
+</body>
+</html>
+
+<!--
+ make an input
+ add button
+ Multiply All button
+ label for output
+ create input element
+ create array variable
++ button function to place input variable into array variable
++ fill label variable w/ array output seperated by a space (loop)
++ 2nd button multiplies entire array (loop)
+-->
