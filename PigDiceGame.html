@@ -37,7 +37,7 @@
                 //$("#lbl").text(gameTotal);
                 scores.push(gameTotal);
                 $("#hs").text(scores);
-                $("#Roll").text("GAME OVER! / Play Again?");
+                $("#Roll").text("Play Again?");
                 total = [];
                 gameTotal = 0;
                 currentTotal = 0;
@@ -52,7 +52,8 @@
   <style>
   .jumbotron {
     margin-bottom: 0px;
-    background-image: url(images/pig.jpg);
+    background-image: url(images/pig2.png);
+    opacity: .7;
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -65,7 +66,7 @@
 <body OnLoad="Main()">
 
     <div class="jumbotron">
-        <h1 class="display-4">Welecome to Pig Dice!</h1>
+        <h1 class="display-4">Welcome to Pig Dice!</h1>
         <p class="lead">Roll the 6 sided dice. 2 - 6 is added to your total. Roll a 1; your score is totaled and the game is over.</p>
         <hr class="my-4">
         <p>Click the button for your first roll, GOOD LUCK!</p>

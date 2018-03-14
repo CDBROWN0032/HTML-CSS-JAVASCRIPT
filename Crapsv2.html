@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script lang="javascript">
+    function Main() { 
+        }
+
+        $().ready(function(){ // start jquery
+            // ------GLOBAL VARIABLES------
+                var win = 0;
+                var loss = 0;
+                var bet = 0;
+                var startTotal = 10000;
+            // ------GLOBAL VARIABLES ------
+
+
+            $("#betbtn").click(function(){ // BET BUTTON 
+                bet = $("#bet").val(); // bet entered
+            });
+
+            $("#btn").click(function(){ // ROLL BUTTON
+                var array  = [];
+                var dice1 = 0;
+                if (startTotal > 0) {
+                if (bet > 0) { 
+                dice1 = Math.floor(Math.random()*6)+1
+                var dice2 = 0;
+                dice2 = Math.floor(Math.random()*6)+1
+                var total = dice1 + dice2;
+                array.push(total);
+                    
+                switch(total) {
+                    case 7: $("#lbl").text("Winner" + total);
+                        win +=1; startTotal = Number(startTotal) + Number(bet); break;
+                    case 11: $("#lbl").text("Winner " + total);
+                        win +=1; startTotal = Number(startTotal) + Number(bet); break;
+                    case 2: $("#lbl").text("Loss " + total); 
+                        loss+= 1; startTotal -= bet; break;
+                    case 3: $("#lbl").text("Loss " + total); 
+                        loss += 1; startTotal -= bet; break;
+                    case 12: $("#lbl").text("Loss " + total); 
+                        loss +=1; startTotal -= bet; break;
+                    default: $("#lbl").text("Error");
+                    
+                    while (point !== total && point !== 7)    {
+                        var point = total;
+                        dice1 = Math.floor(Math.random()*6)+1
+                        dice2 = Math.floor(Math.random()*6)+1
+                        total = dice1 + dice2;
+                        array.push(total);
+                        if ( point == total){ 
+                            $("#lbl").text("Winner "+ array.join(" "))
+                            win += 1;
+                            startTotal = Number(startTotal) + Number(bet);
+                            break;
+                        } 
+                        if (total == 7){
+                            $("#lbl").text("Loss " + array.join(" "))
+                            loss += 1; 
+                            startTotal -= bet;
+                            break;
+                        }  
+                    }        
+                } // end of switch statement
+
+                $("#win").text("Wins: " + win);
+                $("#loss").text("Loss: " + loss);
+                $("#money").text(startTotal);
+            }
+            else { $("#lbl").text("Invalid Bet Amount Entered"); } 
+        } else { $("money").text("GAME OVER"); }
+            }); // end button click function
+            
+
+
+ 
+
+                    //HAVE THEM RETURN BOOL FOR BETTING
+                    //TODO ADD BETTING
+                    //return dice image on roll
+
+          }); // end ready function
+  </script>
+<style>
+        .jumbotron {
+          margin-bottom: 0px;
+          background: url('images/craps_table.jpeg') no-repeat center center fixed;
+          -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  	background-color:#333;
+          font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+          background-position: 0% 25%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          color: white;
+          text-shadow: black 0.3em 0.3em 0.3em;
+      }
+
+
+        </style>
+</head>
+
+<body OnLoad="Main()">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome To Simple Craps</h1>
+            <p class="lead">First Roll: 7,11 WINNER! // 2, 3, 12 LOSER!!</p>
+            <p class="lead">After First Roll get same # twice WINNER! // Roll a 7 and you Lose!</p>
+            <hr class="my-4">
+
+            <label id="money">10000</label><p></p>
+            <input type="number" value="bett" id="bet"type=number></input>
+            <button id="betbtn" class="btn btn-primary">Enter Bet</button>
+            <p></p>
+            <button id="btn" class="btn btn-primary">Play Craps</button>
+            <label id="lbl"></label> <p></p><p></p>
+            <label id="win">Wins: 0</label> <p></p>
+            <label id="loss">Loss: 0</label>
+            </div>
+
+                    
+    </body>
+    </html>
+    
+
+

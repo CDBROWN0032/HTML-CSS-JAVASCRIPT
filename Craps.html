@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script lang="javascript">
+        
+        var array = [];
+        var wins = 0;
+        var loses = 0;
+        var dice1 = 0;
+        var dice2 = 0;
+        var rolled = 0;
+        var point = 0;
+	    function Main() { // this function is started automatically
+        }
+        
+        $().ready(function(){
+            $("#roll1").click(function(){ //FIRST ROLL
+                $("#roll1").hide();  
+                $("#roll").show();
+                rolling();
+                firstRoll();   
+            }); 
+            $("#roll").click(function(){ //ALL OTHER ROLLS
+                rolling();
+                otherRolls();
+
+            });
+                function otherRolls(){ // CONDITIONS FOR OTHER ROLLS
+                    rolling();
+                    if(point == point){
+                    $("#result").text("WINNER");
+                    wins++;
+                    endgame();
+                    } else if (point == 7){
+                    $("#result").text("LOSER")
+                    loses++;
+                    endgame();
+                    } else {
+                    point = point;
+                    return point;
+                    }
+                }
+                    function buttonSwap(){ // SWAPS BUTTONS
+                        $("#roll").hide();  
+                        $("#roll1").show();
+                    }
+                
+                function rolling(){ // ALL ROLLS
+                    dice1 = Math.floor(Math.random()*6)+1;
+                    dice2 = Math.floor(Math.random()*6)+1;
+                    point = dice1 + dice2;
+                    array.push(point);
+                    $("#lbl").text(array.join(" "));
+
+                } // END ROLLING
+
+                function firstRoll(){ // CONDITIONS FOR FIRST ROLL
+                    if(point == 7 || point == 11){
+                        $("#result").text("WINNER");
+                        wins = 1;
+                        point = 0;
+                        array = [];
+                        endgame(); 
+                    }
+                    else if (point == 2|| point == 3|| point == 12){
+                        $("#result").text("LOSER");
+                        loses = 1;
+                        point = 0;
+                        array = [];
+                        endgame(); 
+                    } else { 
+                        point = point;
+                    }
+                } // END CONDITIONS FOR FIRST ROLL
+                function endgame(){
+                    var dice1 = 0;
+                    var dice2 = 0;
+                    var rolled = 0;
+                    var point = 0;
+                    var array = [];
+                    buttonSwap();
+                }
+                
+
+          }); // end ready
+  </script>
+  <style>
+  </style>
+</head>
+<body OnLoad="Main()">
+    <button id="roll1">Simple Craps1</button>
+    <button id="roll" style="display:none;">Simple Craps</button>
+
+    <label id="lbl"></label>
+    <label id="result"></label>
+    <label id="total"></label>
+</body>
+</html>
